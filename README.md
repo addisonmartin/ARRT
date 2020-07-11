@@ -1,0 +1,1 @@
+A WIP photorealistic ray tracer, written in pure Ruby.
