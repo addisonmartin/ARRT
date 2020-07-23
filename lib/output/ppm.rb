@@ -3,8 +3,11 @@
 class PPMImage < Image
 
   # P3 must be written at the top of the file.
-  # This identifies that pixel data is written in RGB with ASCII encoding.
+  # This identifies that pixel data is written with ASCII encoding.
   PPM_HEADER = 'P3\n'
+  # MAX_COLOR_VALUE must be written at the top of the file, beneath the image's width and height.
+  # This denotes the maximum RGB color value.
+  MAX_COLOR_VALUE = '255'
 
   # Outputs the image's pixels data to the given file path.
   # If pixels are not passed in, then the pixels class variable is used.
@@ -29,7 +32,8 @@ class PPMImage < Image
   def write_header(output_file)
 
     output_file.write(PPM_HEADER)
-    output_file.write("#{width} #{height}")
+    output_file.write("#{width} #{height}\n")
+    output_file.write("#{MAX_COLOR_VALUE}\n")
 
   end
 
