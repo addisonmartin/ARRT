@@ -9,6 +9,9 @@ class PPMImage < Image
   # This denotes the maximum RGB color value.
   MAX_COLOR_VALUE = '255'
 
+  # File extension for the PPM image format.
+  FILE_EXTENSION = '.ppm'
+
   # Outputs the image's pixels data to the given file path.
   # If pixels are not passed in, then the pixels class variable is used.
   def write(file_path, pixels=nil)
@@ -16,6 +19,10 @@ class PPMImage < Image
     if pixels
       @pixels = pixels
     end
+
+    puts file_path
+    check_file_extension(file_path, FILE_EXTENSION)
+    puts file_path
 
     File.open(file_path, 'w') do |output_file|
 
