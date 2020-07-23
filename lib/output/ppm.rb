@@ -37,7 +37,8 @@ class PPMImage < Image
 
     pixels.each do |pixel|
 
-      output_file.write(pixel.to_rgb)
+      rgb = pixel.to_rgb
+      output_file.write("#{rgb.r} #{rgb.g} #{rgb.b}")
 
     end
 
