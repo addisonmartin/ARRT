@@ -13,7 +13,7 @@ class PPMImage < Image
   # If pixels are not passed in, then the pixels class variable is used.
   def write(file_path, pixels=nil)
 
-    unless pixels
+    if pixels
       @pixels = pixels
     end
 
