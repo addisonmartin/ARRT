@@ -8,9 +8,10 @@ class PPMImage < Image
   # MAX_COLOR_VALUE must be written at the top of the file, beneath the image's width and height.
   # This denotes the maximum RGB color value.
   MAX_COLOR_VALUE = '255'
-
   # File extension for the PPM image format.
   FILE_EXTENSION = '.ppm'
+
+
 
   # Outputs the image's pixels data to the given file path.
   # If pixels are not passed in, then the pixels class variable is used.
@@ -49,7 +50,7 @@ class PPMImage < Image
     pixels.each do |pixel|
 
       rgb = pixel.to_rgb
-      output_file.write("#{rgb.r} #{rgb.g} #{rgb.b}")
+      output_file.write("#{rgb.r} #{rgb.g} #{rgb.b}\n")
 
     end
 
