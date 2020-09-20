@@ -1,9 +1,9 @@
 #!/usr/bin/env ruby
 
-require "bundler/setup"
-require "ARRT"
+require 'bundler/setup'
+require 'ARRT'
 
 # You can add fixtures and/or initialization code here to make experimenting with your gem easier.
 
-require "pry"
+require 'pry'
 Pry.start

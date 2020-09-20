@@ -1,4 +1,4 @@
-require "ARRT/version"
+require 'ARRT/version'
 
 module ARRT
   class Error < StandardError; end
