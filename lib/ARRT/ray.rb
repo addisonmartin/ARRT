@@ -16,6 +16,8 @@ class Ray
 
   # Returns the point along this ray at the given time.
   def at(time)
+    raise ArgumentError, 'must be a Numeric' unless time.is_a? Numeric
+
     @origin + (time * @direction)
   end
 
