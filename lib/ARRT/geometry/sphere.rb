@@ -13,4 +13,15 @@ class Sphere
     "sphere centered at #{@origin.to_s} with radius #{@radius.to_s('F')}"
   end
 
+  def intersection(ray)
+    offset = ray.center - @origin
+
+    a = ray.direction.dot(ray.direction)
+    b = 2 * offset.dot(ray.direction)
+    c = offset.dot(offset) - (@radius * @radius)
+
+    discriminant = (b * b) - (4 * a * c)
+    discriminant.positive?
+  end
+
 end
