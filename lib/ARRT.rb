@@ -1,7 +1,8 @@
 require 'ARRT/version'
 
 module ARRT
-  require_relative 'ARRT/math'
+  require 'bigdecimal'
+  require_relative 'ARRT/vector3'
 
   class Error < StandardError; end
 end
