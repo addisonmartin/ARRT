@@ -70,6 +70,13 @@ class Vector3
     end
   end
 
+  # Adds support for 3 * vector3, instead of just vector3 * 3, etc.
+  def coerce(other)
+    raise TypeError, "#{self.class} can't be coerced into #{other.class}" unless other.is_a? Numeric
+
+    [self, other]
+  end
+
   def dot(other)
     ((@x * other.x) + (@y * other.y) + (@z * other.z))
   end
