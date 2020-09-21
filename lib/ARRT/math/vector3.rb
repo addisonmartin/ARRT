@@ -31,13 +31,13 @@ class Vector3
   end
 
   def +(other)
-    raise ArgumentError('must be a Vector3') unless other.is_a? Vector3
+    raise ArgumentError, 'must be a Vector3' unless other.is_a? Vector3
 
     Vector3.new(@x + other.x, @y + other.y, @z + other.z)
   end
 
   def -(other)
-    raise ArgumentError('must be a Vector3') unless other.is_a? Vector3
+    raise ArgumentError, 'must be a Vector3' unless other.is_a? Vector3
 
     Vector3.new(@x - other.x, @y - other.y, @z - other.z)
   end
@@ -50,7 +50,7 @@ class Vector3
     elsif other.is_a? Vector3
       Vector3.new(@x * other.x, @y * other.y, @z * other.z)
     else
-      raise ArgumentError('must be a Vector3 or Numeric')
+      raise ArgumentError, 'must be a Vector3 or Numeric'
     end
   end
 
@@ -62,7 +62,7 @@ class Vector3
     elsif other.is_a? Vector3
       Vector3.new(@x / other.x, @y / other.y, @z / other.z)
     else
-      raise ArgumentError('must be a Vector3 or Numeric')
+      raise ArgumentError, 'must be a Vector3 or Numeric'
     end
   end
 
