@@ -12,6 +12,12 @@ class Vector3
     "<#{@x.to_s('F')}, #{@y.to_s('F')}, #{@z.to_s('F')}>"
   end
 
+  def ==(other)
+    return false unless other.is_a? Vector3
+
+    ((@x == other.x) and (@y == other.y) and (@z == other.z))
+  end
+
   def length
     Math.sqrt(squared_length)
   end
