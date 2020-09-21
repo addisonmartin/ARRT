@@ -1,3 +1,20 @@
 #!/usr/bin/env ruby
 
 require 'ARRT'
+
+def rainbow_gradient
+  width = 256
+  height = 256
+
+  image = PPM.new(width, height)
+
+  (0...image.height).each do |y|
+    (0...image.width).each do |x|
+      image.pixels[y][x] = Vector3.new(y, x, 63)
+    end
+  end
+
+  image.write(File.path('/tmp/rainbow_gradient.ppm'))
+end
+
+rainbow_gradient
