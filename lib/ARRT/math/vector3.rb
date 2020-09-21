@@ -31,7 +31,7 @@ class Vector3
   end
 
   def -@
-    Vector3.new(-1 * @x, -1 * @y, -1 * @z)
+    self * -1
   end
 
   def +(other)
