@@ -14,4 +14,9 @@ class Ray
     "ray at #{@origin.to_s} facing #{@direction.to_s}"
   end
 
+  # Returns the point along this ray at the given time.
+  def at(time)
+    @origin + (time * @direction)
+  end
+
 end
