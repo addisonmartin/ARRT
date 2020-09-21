@@ -20,4 +20,18 @@ class PPM
 
     output += "}"
   end
+
+  def write(path)
+    File.open(path, 'w') do |file|
+      file << "P3\n"
+      file << "#{@width} #{@height} \n"
+      file << "255\n"
+
+      (0...@height).each do |y|
+        (0...@width).each do |x|
+          file << "#{@pixels[y][x].x} #{@pixels[y][x].y} #{@pixels[y][x].z}\n"
+        end
+      end
+    end
+  end
 end
