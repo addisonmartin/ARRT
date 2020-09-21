@@ -22,6 +22,9 @@ class PPM
   end
 
   def write(path)
+    total = Float(@width * @height)
+    current = 0.0
+
     File.open(path, 'w') do |file|
       file << "P3\n"
       file << "#{@width} #{@height} \n"
@@ -30,8 +33,14 @@ class PPM
       (0...@height).each do |y|
         (0...@width).each do |x|
           file << "#{Integer(@pixels[y][x].x)} #{Integer(@pixels[y][x].y)} #{Integer(@pixels[y][x].z)}\n"
+
+          current += 1
         end
+
+        puts "#{'%.2f' % ((current / total) * 100)}%"
       end
     end
+
+    puts 'Done!'
   end
 end
